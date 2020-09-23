@@ -1,0 +1,290 @@
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+// 모달 끝나는 부분
+
+// 검색바
+.search_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem 3rem;
+  border: 1px solid black;
+  }
+
+//이미지 카드 부분 
+  
+.card-img-top {
+    height: 20rem;
+    width: 90%;
+    margin: 1rem 1rem;
+}
+
+.card{
+  float: left;
+  margin-bottom: 2rem;
+  // margin-left: 3rem;
+  // margin-right: 2rem;
+  padding: 10px;
+  width: 33.3%;
+}
+
+
+@media all and (max-width: 768px) {
+  .card{
+    width: 50%;
+  }
+        
+}
+@media all and (min-width: 769px) and (max-width: 1000px) {
+  .card{
+    width: 33.3%;
+  }
+}
+@media all and (min-width: 1001px) {
+  .card{
+    width:25%;
+  }      
+}
+
+// .img{
+//     width: 30rem;
+// }
+  
+
+
+
+.name{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0.6rem;
+}
+
+.layout{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap : wrap;
+  margin: 0 auto;
+  max-width: 980px;
+  min-height: 488px;
+}
+
+
+
+  
+.gender_box{
+  display: flex;
+}
+
+.search_list{
+  margin: 1rem auto;
+  display: flex;
+}
+.custom-select{
+  height: 3rem;
+}
+
+
+//이거슨 카러셀//
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+} 
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+} 
+.carousel-caption {
+    text-shadow: 0 1px 4px rgba(0,0,0,.9);
+  font-size:17px
+}
+.carousel-caption h3 {
+  font-size: 30px;
+  font-family: 'Lato', sans-serif;
+}
+    // html,
+    // body,
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+      height: 700px;
+    } 
+    .item:nth-child(1) {
+      background: url('/assets/main_banner(1).png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+    }
+
+    .item:nth-child(2) {
+      background: url('/assets/main_banner(2).png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+    }
+
+    .item:nth-child(3) {
+      background: url('/assets/main_banner(3).png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+    }
+
+//네브바//
+
+.fixed {
+	position: fixed;
+	top: 0;
+	height: 70px;
+	z-index: 1;
+}
+body {
+	font-size: 18px;
+	text-align: center;
+}
+/* Navigation Settings */
+nav {
+  padding-top: 3px!important;
+	width: 100%;
+	min-width: 750px;
+    height: 70px;
+	background: #BDBDBD;
+}
+nav li {
+	display: inline-block;
+	padding: 24px 10px;
+	line-height: 22px;
+	margin: 0% 3%;
+}
+nav li a {
+  font-size: 1.88rem;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: justify;
+}
+nav li a:hover{
+    font-size: 2.4rem;
+    color: #FFFFFF;
+    text-decoration:none;
+}
+
+
+//맨위의 로고네브바
+.content{
+  margin-top: 80px;
+}
+.main-nav{
+    background-image:url('/assets/nav.png');
+    background-size: cover;
+    list-style: none;
+    display:flex;
+    padding: 0% 0%;
+    margin-bottom: 0px;
+}
+
+.main-nav li:first-child {
+    margin-right:auto;
+}
+
+.main-nav a {
+    font-size: 1.44rem;
+    display: block;
+    line-height: 70px;
+    padding-right: 20px;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+
+.main-nav a:hover{
+    text-decoration: none;
+    color: #F08827;
+}
+
+@media only screen and (max-width: 520px) {
+
+	nav li {
+		padding: 24px 4px;
+	}
+
+	nav li a {
+		font-size: 1rem;
+	}
+
+}
+
+//사진
+.main-image{
+  width:100%;
+}
+
+    //템플릿
+    
+    

@@ -1,0 +1,35 @@
+<head>
+     <link href="assets/home.scss" rel="stylesheet">
+
+</head>
+
+        <% @other_propose.each do |x| %>
+            <div class="card">
+                <img class="card-img-top" src="<%= @user.where(:id => x.user_id).take.image %>" alt="프로필 사진이 없습니다.">
+                <div class="card-block">
+                    <h4 class="card-title"><%= @user.where(:id => x.user_id).take.name %></h4>
+                 
+                    <!-- Trigger/Open The Modal -->
+                        <button id="myBtn">자세히 보기</button>
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                          <!-- Modal content -->
+                              <div class="modal-content">
+                                <span class="close">&times;</span>
+                                
+                                <form action='/mypage/propose_success' method="get">
+                                  <input type="hidden" name="user_id" value="<%= x.user_id %>">
+                                  <button  class="btn btn-primary" >신청 승락하기</button>
+                                </form>
+                                
+                                <form action='/mypage/propose_reject' method="get">
+                                  <input type="hidden" name="user_id" value="<%= x.user_id %>">
+                                  <button  class="btn btn-primary" >신청 거절하기</button>
+                                </form>
+                                
+                              </div>
+                        </div>
+                   
+                </div>
+            </div>
+        <% end %>

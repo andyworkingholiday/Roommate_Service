@@ -1,0 +1,82 @@
+<head>
+     <style>
+          #chat{
+               border : 0.15em solid rgba(150,150,150,0.22);
+               
+               padding-top : 3%;
+               padding-bottom : 5%;
+               border-radius: 0.4em;
+               
+          }
+          #middle{
+            text-align : left;
+          }
+          
+          #out{
+            margin-top:5%;
+            margin-bottom:5%;
+            
+          }
+          
+          p{
+            
+          }
+          
+     </style>
+</head>
+
+<body>
+  
+
+   
+     <div class="col-xs-2 col-md-1">
+       
+     </div>
+     <div class="col-xs-14 col-md-10" id="out">
+         <% @chat1.each do |x| %>
+            <a href = "/chat/<%= x.recipient_id %>">
+               <div id="chat">
+                   <div class="col-xs-4 col-md-3">
+                        <p>하잉 </p>
+                   </div>
+                   <div class="col-xs-8 col-md-5" id="middle">
+                        <p> <%= x.recipient_id %>과의 채팅방 </p>
+                        
+                   </div>
+                   <div class="col-xs-6 col-md-4">
+                        <p>뭐야</p>
+                   </div>
+                 
+               </div> 
+            </a>
+            <br>
+         <% end %>
+         <br>
+     
+       
+       
+         <% @chat2.each do |x| %>
+             <a href = "/chat/<%= x.recipient_id %>">
+                 <div id="chat">
+                     <div class="col-xs-4 col-md-3">
+                          <p>하잉 </p>
+                     </div>
+                     <div class="col-xs-8 col-md-5" id="middle">
+                          <p><%= x.sender_id %>과의 채팅방</p>
+                     </div>
+                     <div class="col-xs-6 col-md-4">
+                          <p>뭐야..</p>
+                     </div>
+                   
+                 </div> 
+             </a>   
+            <br>
+         <% end %>  
+      </div>
+      <div class="col-xs-2 col-md-1">
+       
+      </div>
+           
+         
+       
+</body>  

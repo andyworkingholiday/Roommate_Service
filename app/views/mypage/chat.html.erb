@@ -1,0 +1,118 @@
+<body>
+   
+    
+    <div class="container">  
+      
+      <h1> <%= @users.id %> 과 메세지 주고 받는 곳</h1>
+      
+      <div>
+  
+        <!-- Nav tabs -->
+        
+        
+        <%= link_to "받은 매세지", mypage_receipt_path, :remote => true, class: "list_item only_text" %>
+        <%= link_to "보낸 메세지", mypage_sendmessage_path, :remote => true, class: "list_item only_text" %>
+        <%= link_to "쪽지함", mypage_all_chat_path, :remote => true, class: "list_item only_text col-sm-offset-1" %>
+        
+        <div class="container" id="message">
+          
+        </div>
+        <!-- Tab panes -->
+        <!--<div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+              <div id="message1">
+                <%# if @messages2 == nil %>
+                  <h1> 받은 메세지가 없습니다 </h1>
+                <%# else %>
+                  <%#= render @messages2 %>
+                <%# end %>
+                  
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+              <div id="message2">
+                  
+                    <%#= render @messages1 %>
+                  
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="messages">
+              
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                쪽지보내기
+              </button>
+              
+              
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form action='/chat/<%#= @users.id %>/mypage/message' method="post" data-remote='true'>
+                   
+                          <div class="form-group">
+                                      
+                              <input type="text" class="form-control" id="formGroupExampleInput2" name="body" style="padding-bottom:20%;" placeholder="내용을 입력하세요">
+                          </div>
+                          <div class="footer" sytle="padding-top:10%;">
+                             <button type="submit" class="btn btn-primary" >작성</button>
+                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div> 
+                      </form>
+                    </div>
+                    <!--<div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="settings">
+             
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Launch demo modal
+              </button>
+              
+              
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>보내져 제발 </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+      </div> -->
+      
+      
+      
+      
+      <h1> 이 밑에 폼 부분은 모달로 작성 할 수 있도록 해봄</h1>
+      <form action='/chat/<%= @users.id %>/mypage/message' method="post" data-remote='true'>
+                   
+          <div class="form-group">
+                      
+              <input type="text" class="form-control" id="formGroupExampleInput2" name="body" style="padding-bottom:20%;" placeholder="내용을 입력하세요">
+          </div>
+           <button type="submit" class="btn btn-primary">작성</button>
+      </form>
+      
+    </div>  
+    
+</body>    

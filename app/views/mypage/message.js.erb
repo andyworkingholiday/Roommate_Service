@@ -1,0 +1,15 @@
+<!--<%# if @messages2 == nil %>
+ $('#message1').html("받은 메세지가 없습니다")
+<%# else %> 
+ $('#message1').append("<%#= j render @messages2.last %>")
+<%# end %>-->
+
+<% if @messages1 == nil %>
+ $('#message2').html("보낸 메세지가 없습니다")
+<% else %> 
+ $('#message2').append("<%= j render @messages1.last %>");
+<%end %>
+
+
+$('#myModal').modal('hide');
+

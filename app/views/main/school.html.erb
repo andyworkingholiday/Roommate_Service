@@ -1,0 +1,233 @@
+
+
+<link href="school.scss" type="text/css">
+
+
+
+  
+   <script>
+   
+// Get the modal
+// var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+<%# @u_info.each do |x| %>
+ //var btn = document.getElementById('<%#= @u_info.id %>');
+
+// Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+<%# @u_info.each do |x| %>
+  // document.getElementById("<%#= x.id %>").onclick = function() {
+     // modal.style.display = "block";
+  // }
+<%# end %>
+
+// When the user clicks on <span> (x), close the modal
+
+//span.onclick = function() {
+  //  modal.style.display = "none";
+//}
+
+// When the user clicks anywhere outside of the modal, close it
+//window.onclick = function(event) {
+  //  if (event.target == modal) {
+  //      modal.style.display = "none";
+  //  }
+//}
+
+
+//해커톤 마지막 모달
+$(document).ready(function() {
+      
+        function toggleSidebar() {
+          $(".button").toggleClass("active");
+          $("main").toggleClass("move-to-left");
+          $(".sidebar-item").toggleClass("active");
+        }
+      
+        $(".button").on("click tap", function() {
+          toggleSidebar();
+        });
+      
+        $(document).keyup(function(e) {
+          if (e.keyCode === 27) {
+            toggleSidebar();
+          }
+        });
+      
+      });
+   </script>
+  
+  <main>
+    <nav>
+      <div class="nav-right hidden-xs">
+        <div class="button" id="btnn">
+          <div class="bar top"></div>
+          <div class="bar middle"></div>
+          <div class="bar bottom"></div>
+        </div>
+      </div>
+      <!-- nav-right -->
+    </nav>
+    <form class="form-inline search_bar" action="/main/school" >
+                    <div class="search_list">
+                        <div class="name">
+                          <b>학교</b>
+                        </div>
+                        <div class="question">
+                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="school">
+                              <option selected>대학교 선택</option>
+                              <option value="경희대학교(국제)">경희대학교(국제)</option>
+                              <option value="경희대학교(서울)">경희대학교(서울)</option>
+                              <option value="서울과기대">서울과기대</option>
+                              <option value="allpass">학교무관</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="search_list">
+                        <div class="name">
+                          <b>성별</b>
+                        </div>
+                        <div class="question gender_box">
+                           <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="gender">
+                              <option selected>성별</option>
+                              <option value="남자">남자</option>
+                              <option value="여자">여자</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="search_list">
+                        <div class="name">
+                          <b>나이</b>
+                        </div>
+                        <div class="question">
+                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="minage">
+                              <option value="">선택</option><option value="2000">18세 (2000년)</option><option value="1999">19세 (1999년)</option><option value="1998">20세 (1998년)</option><option value="1997">21세 (1997년)</option><option value="1996">22세 (1996년)</option><option value="1995">23세 (1995년)</option><option value="1994">24세 (1994년)</option><option value="1993">25세 (1993년)</option><option value="1992">26세 (1992년)</option><option value="1991">27세 (1991년)</option><option value="1990">28세 (1990년)</option><option value="1989">29세 (1989년)</option><option value="1988">30세 (1988년)</option><option value="1987">31세 (1987년)</option><option value="1986">32세 (1986년)</option><option value="1985">33세 (1985년)</option><option value="1984">34세 (1984년)</option><option value="1983">35세 (1983년)</option><option value="1982">36세 (1982년)</option><option value="1981">37세 (1981년)</option><option value="1980">38세 (1980년)</option><option value="1979">39세 (1979년)</option><option value="1978">40세 (1978년)</option><option value="1977">41세 (1977년)</option><option value="1976">42세 (1976년)</option><option value="1975">43세 (1975년)</option><option value="1974">44세 (1974년)</option><option value="1973">45세 (1973년)</option><option value="1972">46세 (1972년)</option><option value="1971">47세 (1971년)</option><option value="1970">48세 (1970년)</option><option value="1969">49세 (1969년)</option><option value="1968">50세 (1968년)</option><option value="1967">51세 (1967년)</option><option value="1966">52세 (1966년)</option><option value="1965">53세 (1965년)</option><option value="1964">54세 (1964년)</option><option value="1963">55세 (1963년)</option><option value="1962">56세 (1962년)</option><option value="1961">57세 (1961년)</option><option value="1960">58세 (1960년)</option><option value="1959">59세 (1959년)</option><option value="1958">60세 (1958년)</option><option value="1957">61세 (1957년)</option><option value="1956">62세 (1956년)</option><option value="1955">63세 (1955년)</option><option value="1954">64세 (1954년)</option><option value="1953">65세 (1953년)</option><option value="1952">66세 (1952년)</option><option value="1951">67세 (1951년)</option><option value="1950">68세 (1950년)</option><option value="1949">69세 (1949년)</option><option value="1948">70세 (1948년)</option><option value="1947">71세 (1947년)</option><option value="1946">72세 (1946년)</option><option value="1945">73세 (1945년)</option><option value="1944">74세 (1944년)</option><option value="1943">75세 (1943년)</option>
+                            </select>
+                            <b>~ </b>
+                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="maxage">
+                              <option value="">선택</option><option value="2000">18세 (2000년)</option><option value="1999">19세 (1999년)</option><option value="1998">20세 (1998년)</option><option value="1997">21세 (1997년)</option><option value="1996">22세 (1996년)</option><option value="1995">23세 (1995년)</option><option value="1994">24세 (1994년)</option><option value="1993">25세 (1993년)</option><option value="1992">26세 (1992년)</option><option value="1991">27세 (1991년)</option><option value="1990">28세 (1990년)</option><option value="1989">29세 (1989년)</option><option value="1988">30세 (1988년)</option><option value="1987">31세 (1987년)</option><option value="1986">32세 (1986년)</option><option value="1985">33세 (1985년)</option><option value="1984">34세 (1984년)</option><option value="1983">35세 (1983년)</option><option value="1982">36세 (1982년)</option><option value="1981">37세 (1981년)</option><option value="1980">38세 (1980년)</option><option value="1979">39세 (1979년)</option><option value="1978">40세 (1978년)</option><option value="1977">41세 (1977년)</option><option value="1976">42세 (1976년)</option><option value="1975">43세 (1975년)</option><option value="1974">44세 (1974년)</option><option value="1973">45세 (1973년)</option><option value="1972">46세 (1972년)</option><option value="1971">47세 (1971년)</option><option value="1970">48세 (1970년)</option><option value="1969">49세 (1969년)</option><option value="1968">50세 (1968년)</option><option value="1967">51세 (1967년)</option><option value="1966">52세 (1966년)</option><option value="1965">53세 (1965년)</option><option value="1964">54세 (1964년)</option><option value="1963">55세 (1963년)</option><option value="1962">56세 (1962년)</option><option value="1961">57세 (1961년)</option><option value="1960">58세 (1960년)</option><option value="1959">59세 (1959년)</option><option value="1958">60세 (1958년)</option><option value="1957">61세 (1957년)</option><option value="1956">62세 (1956년)</option><option value="1955">63세 (1955년)</option><option value="1954">64세 (1954년)</option><option value="1953">65세 (1953년)</option><option value="1952">66세 (1952년)</option><option value="1951">67세 (1951년)</option><option value="1950">68세 (1950년)</option><option value="1949">69세 (1949년)</option><option value="1948">70세 (1948년)</option><option value="1947">71세 (1947년)</option><option value="1946">72세 (1946년)</option><option value="1945">73세 (1945년)</option><option value="1944">74세 (1944년)</option><option value="1943">75세 (1943년)</option>
+                            </select>
+                        </div>
+                    </div>
+                <div class="search_list">
+                <button type="submit" class="btn btn-primary">검색</button>
+                </div>
+    </form>
+  
+  
+  <div class="whole_grid_box">
+    
+    <% unless current_user == nil %>
+        <% unless @u_info.where(:user_id => current_user.id).take.expose == true %>
+            <form action="/main/expose" method="post" style="text-align:right; margin:1rem 3rem">
+              <input type="hidden" name="category" value="school">
+              <button type="submit" class="btn btn-success">내 정보 올리기</button>
+            </form>
+            
+        <% else %>
+            <form action="/main/un_expose" method="post" style="text-align:right; margin:1rem 3rem">
+              <button type="submit" class="btn btn-success">내 정보 내리기</button>
+            </form>
+        <% end %>
+    <% end %>
+    
+    
+    <!--여기가 프로필사진나오는 부분-->
+    <% if @select.present? %>
+        <div class="layout">
+          <% @select.each do |select| %>
+            <% if select.expose = true %>
+            
+            
+              <div class="card">
+                <img class="card-img-top" src="<%= @user.where(:id => @select.user_id).take.image %>" alt="Card image cap">
+                <div class="card-block ">
+                  <h4 class="card-title"><%= @user.where(:id => @select.user_id).take.name %></h4>
+                  <p class="card-text"><%= select.school_name %> <%= @select.created_at.strftime("%Y-%m-%d") %> )</p>
+    
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+   
+    <% else %>
+      
+      </br>
+      <div class="layout" style="padding: 0 auto">
+        <% @u_info.each do |x|%>
+          <% if x.expose == true %>
+            <div class="card">
+                <img class="card-img-top" src="<%= @user.where(:id => x.user_id).take.image %>" alt="프로필 사진이 없습니다.">
+                <div class="card-block">
+                    <h4 class="card-title"><%= @user.where(:id => x.user_id).take.name %></h4>
+                    <p class="card-text"><%= x.school_name %> <%= x.created_at.strftime("%Y-%m-%d") %> </p>
+                        
+                        <form action="/main/detail_button">
+                        <input type="hidden" value="<%= x.id %>" name="detail_id">
+                        <input type="submit" class="btn"  value="자세히 보기" >
+                        <!--<button type="button" class="btn btn-primary">자세히 보기</button>-->
+                        </form>
+                        
+                   
+                   
+                </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    
+    <% end %>
+  </div>
+  </main>
+
+
+    <%if current_user == nil%>
+       <div class="sidebar">
+              <ul class="main-nav new-user">
+                    <li>
+                      <img src="/assets/로고.jpg" height=40px style="margin-top:10px; margin-left:10px;"></li>
+                  
+                    <li><%= link_to '로그인', new_user_session_path %></li>
+                    <li><%= link_to '회원가입', new_user_registration_path %></li>
+              </ul>
+       
+       </div>
+     
+     <%else%>
+     
+     <div class="sidebar">
+            <ul class="main-nav new-user">
+                  <li>
+                    <img src="/assets/로고.jpg" height=40px style="margin-top:10px; margin-left:10px;"></li>
+                
+                  <li><%= link_to '로그인', new_user_session_path %></li>
+                  <li><%= link_to '회원가입', new_user_registration_path %></li>
+                  <li><%= link_to('Logout', destroy_user_session_path, method: :get) %> </li>
+            </ul>
+          	<div class="portfoliocard">
+                	<div class="profile_picture">
+                  	  <img class="small_img" src="<%= current_user.image %>" alt="">
+                  	  <div id="bottom-head">
+                  	    
+                  	 </div>
+              	  </div>
+              	<div class="right_col">
+              		<h2 class="name" onclick="location.href='/mypage/index/<%= current_user.id%>'"><%= current_user.name %></h2>
+              		<ul class="sidebar-list">
+              		    <li class="sidebar-item"><a href="/main/home" class="sidebar-anchor">홈</a></li>
+                      <li class="sidebar-item"><a href="/main/haveroom" class="sidebar-anchor">방으로 찾기</a></li>
+                      <li class="sidebar-item"><a href="/main/school" class="sidebar-anchor">기숙사로 찾기</a></li>
+                      <li class="sidebar-item"><a href="/main/nhaveroom" class="sidebar-anchor">붕:신 찾기</a></li>
+                  </ul>
+              	</div>
+          	</div>
+     </div>
+                  
+<%end%>  
+          	

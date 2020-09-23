@@ -1,0 +1,265 @@
+<head>
+    <!-- Custom CSS -->
+
+    <link href="home.scss" type="text/css">
+    <script src="https://use.fontawesome.com/09bbfa620e.js"></script>   
+</head>
+
+<body>
+    <script>
+        $(document).ready(function(){
+          $(window).scroll(function(){
+            if ($(this).scrollTop() > 800) {
+              $('nav').addClass('fixed');
+            }
+            else {
+              $('nav').removeClass('fixed');
+            }
+          });
+          
+          $(document).scroll(function(){
+            var top=$(this).scrollTop();
+              if(top<700){
+                var dif=1-top/700;
+                $('.carousel').css({opacity:dif});
+              }
+          });
+          
+          $('.carousel').carousel();
+          
+        });
+        
+        /* $(document).ready(function(){
+        $(document).scroll(function(){
+        var top=$(this).scrollTop();
+        if(top<700){
+        var dif=1-top/700;
+        $('.carousel').css({opacity:dif});
+        }
+        })
+        });
+        
+        $('.carousel').carousel(); */
+	</script>
+	 <!-- 로그인 회원가입-->
+    <ul class="main-nav new-user">
+                  <li><a href="/main/home" class="logo" style="margin:0px 22px"><img src="/assets/로고.jpg" height=60px></a></li>
+                <%if current_user.nil?%>
+                  <li><%= link_to '로그인', new_user_session_path %></li>
+                  <li><%= link_to '회원가입', new_user_registration_path %></li>
+                <%else%>
+                  
+                  <li><a href="/main/home"> <%= current_user.name %>님 </a> </li>
+                    
+                    <li> <a href="/mypage/index/<%= current_user.id%>">마이페이지</a></li>
+            
+                  <li><%= link_to('Logout', destroy_user_session_path, method: :get) %> </li>
+                <%end%>
+                </ul>
+    <!--앞에 넘어가는 카드 부분이얌-->
+    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">  
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item"> 
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item"> 
+                <div class="carousel-caption">
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carouselFade" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- 네브바-->
+     <nav style="background-color: #bdbdbd!important;">
+        <ul>
+            <li><a href="/main/haveroom">방으로 찾기</a></li>
+            <li><a href="/main/school">기숙사로 찾기</a></li>
+            <li><a href="/main/nhaveroom">붕:신찾기</a></li>
+            <li><a href="#">질문있어요</a></li>
+        </ul>
+    </nav>
+    
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <img class="img-responsive" src="/assets/main_image(1).png" style="margin-top:50px">
+                </div>
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">생활패턴에 따른 붕신만의 룸메이트 추천 시스템</h2>
+                    <p class="lead">룸메이트와 다른 생활패턴으로인해 힘들었던 당신을 위해<br>붕신은 생활 유형에 따른 룸메이트를 추천해줍니다. </p>
+                </div>
+
+            </div>
+
+       
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div>
+
+        <div class="container">
+
+            <div class="row">
+                <div>
+                  <hr class="section-heading-spacer">
+                  <img class="img-responsive" src="/assets/main_image(2).png" alt="">
+                </div>
+                <div>
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">상황별 질문에 따른 룸메이트 추천 시스템</h2>
+                    <p class="lead">친구와 술을 먹는데 막차가 끊겼다. 집에는 룸메가 있다.</a>친구를 집에 재울 것인가? 혹은 다른 방법을 찾을 것인가?</p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-c">
+
+        <div class="container">
+
+            <div class="row">
+               <div>
+                  <hr class="section-heading-spacer">
+                  <img class="img-responsive" src="/assets/main_image(3).png" alt="">
+                </div>
+                <div>
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">지금 붕신과 함께 시작하세요!</h2>
+                    <p class="lead">기숙사 룸메부터 자취방 룸메까지 전부!
+                </div>
+               
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /여기부터 푸터~-->
+    <!--<div class="content-section-d" style="padding-top : 10%">
+    
+    	<a  name="contact"></a>
+    	
+        <div class="banner">
+    
+            <div class="container">
+    
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>contact할래?ㅎㅎㅎㅎ</h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="list-inline banner-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+            </div>
+        
+            
+    
+        </div>
+        
+    </div>
+        
+    <footer style="padding-top : 10%">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted small">Copyright &copy; 붕신</p>
+                    </div>
+                </div>
+            </div>
+            
+    </footer>-->
+    <div class="row1" style="background-color: #FBC400; color: white; height: 270px; text-align: left; margin-top:5%;">
+            <br><br>
+            
+                <div class="col-xs-6 col-sm-4" style="text-align:left; padding-left: 5%;">
+                    <h8 style="padding-left:5%;">contact</h8><br><br><br>
+                    <a class="col-sm-4"
+                    href="https://www.facebook.com/kyungheelion/?fref=ts" target="_blank"
+                    style="width: 60px; height: 60px;">
+                        </a>
+                    <br><p class="col-sm-8" style="font-family: 'Jeju Gothic', sans-serif; font-size: 1em;">
+                        멋쟁이사자처럼 at 경희대<br>페이스북으로 문의해주세요.</p>
+                </div>
+                
+                <div class="col-xs-6 col-sm-4" style="padding-left: 7.5%; font-family: 'Jeju Gothic', sans-serif; font-size: 1em;">
+                    <h8><strong>제작 후기</strong></h8><br><br><br>
+                    <p style="text-align:left;">
+                    멋사 합시다!
+                        </p>
+                </div>
+                
+                <div class="col-xs-6 col-sm-4" style="text-align:left; font-family: 'Jeju Gothic', sans-serif; font-size: 1em; padding-left: 8%;">
+                    <h8><strong>information</strong></h8><br><br><br>
+                    <p style="text-align:left;">
+                        경희대학교 국제캠퍼스<br>경기도 용인시 기흥구 덕영대로 1732
+                        <br>COPYRIGHT 2017. <br>LIKELION AT KYUNGHEE GLOBAL<br> ALL RIGHT RESERVED. </p>
+                </div>
+                
+        </div>
+</div>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>-->
+</body>
+
+</html>

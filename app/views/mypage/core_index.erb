@@ -1,0 +1,54 @@
+<head>
+  <link href="assets/login.scss" rel="stylesheet">
+</head>
+
+ 
+
+<div class="container">
+<div class="contentwrap">
+    <div class="ppage-header">
+      <h2 class="col-sm-7">기본 인적사항</h2><br><br>
+      <hr class="linee">
+    </div>
+    
+    
+   
+                    <form class="form-inline col-sm-8 col-sm-offset-2" action="/mypage/core_create" method="post">
+                                    <div class="form_group">
+                                        <label for="inlineFormCustomSelect" class="col-sm-9 control-label" style="text-align: left;">학교 고르기</label>
+                                        <select class="custom-select" id="inlineFormCustomSelect" name="school">
+                                          <option value="경희대학교(국제)">경희대학교(국제)</option>
+                                          <option value="경희대학교(서울)">경희대학교(서울)</option>
+                                          <option value="서울과기대">서울과기대</option>
+                                        </select>
+                                    </div>
+                                    
+                                  <div class="form_group">
+                                      <div class="big_question">
+                                          <div class="question">
+                                              <h5>남자</h5>
+                                              <input type="radio" name="gender" id="fancy-radio-1" value="남자">
+                                              <label for="fancy-radio-1">Radio</label>
+                                          </div>
+                                          <div class="question">
+                                              <h5>여자</h5>
+                                              <input type="radio" name="gender" id="fancy-radio-2" value="여자">
+                                              <label for="fancy-radio-2">Radio</label>
+                                          </div>
+                                      </div>
+                                  </div>
+                          
+                                  <div class="form_group">
+                                    <label for="inlineFormCustomSelect" class="col-sm-9 control-label" style="text-align: left;">생년월일</label>
+                                    <div class="col-sm-4">
+                                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="age">
+                                    </div>
+                                  </div>
+
+                                  <button type="submit" class="btn btn-primary">제출</button>
+                   </form>
+    
+    
+</div>
+</div>
+  

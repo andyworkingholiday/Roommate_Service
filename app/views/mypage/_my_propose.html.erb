@@ -1,0 +1,64 @@
+<head>
+     <link href="home.scss" type="text/css">
+
+</head>
+        <% if @m_propose == nil %>
+            <h2> 신청한 룸메가 없습니다.</h2>
+        <% else %>
+            <% @m_propose.each do |x| %>
+                <div class="card">
+                     <% if @user.where(:id => x.other_id).take.image == nil %>
+                         <img class="card-img-top" src="/assets/basic image.jpg" alt="Card image cap">
+                     <% else %>
+                        <img class="card-img-top" src="<%= @user.where(:id => x.other_id).take.image %>"  alt="Card image cap">
+                     <% end %>
+                  
+                    <div class="card-block">
+                        <h4 class="card-title"><%= @user.where(:id => x.other_id).take.name %></h4>
+                     
+                        <!-- Trigger/Open The Modal 
+                            <button id="myBtn">자세히 보기</button>
+                            <!-- The Modal 
+                            <div id="myModal" class="modal">
+                              <!-- Modal content 
+                                  <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    
+                                    <form action='/mypage/propose_cancel' method="get">
+                                      <input type="hidden" name="other_id" value="<%#= x.other_id %>">
+                                      <button  class="btn btn-primary" >신청 취소하기</button>
+                                    </form>
+                                    
+                                  </div>
+                            </div>-->
+                            
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= x.other_id %>">
+                              자세히 보기
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal<%= x.other_id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"><%= @user.where(:id => x.user_id).take.name %></h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form action='/mypage/propose_cancel' method="get">
+                                      <input type="hidden" name="other_id" value="<%= x.other_id %>">
+                                      <button  class="btn btn-primary" >신청 취소하기</button>
+                                    </form>
+                                  </div>
+                                  <!--<div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                  </div>-->
+                                </div>
+                              </div>
+                            </div>
+                       
+                    </div>
+                </div>
+            <% end %>
+        <% end %>

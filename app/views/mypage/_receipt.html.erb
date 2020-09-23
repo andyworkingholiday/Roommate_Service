@@ -1,0 +1,12 @@
+<li> 
+   <span class="date"><%#= time_ago_in_words(@messages.created_at) %> ago</span>
+   <p>
+      <% if @receipt.nil? %>
+        <h3> 받은 메세지가 없습니다 </h3>
+      <% else %>  
+        <%= @receipt.body %> 
+      <% end %>  
+   </p>
+   
+</li>
+

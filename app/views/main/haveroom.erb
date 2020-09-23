@@ -1,0 +1,82 @@
+<head>
+  <link href="haveroom.scss" type="text/css">
+  <script>
+//사이드메뉴 스크립트
+$(document).ready(function() {
+
+  function toggleSidebar() {
+    $(".button").toggleClass("active");
+    $("main").toggleClass("move-to-left");
+    $(".sidebar-item").toggleClass("active");
+  }
+
+  $(".button").on("click tap", function() {
+    toggleSidebar();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) {
+      toggleSidebar();
+    }
+  });
+
+});
+</script>
+</head>
+  <main>
+    <nav>
+      <div class="nav-right hidden-xs">
+        <div class="button" id="btnn">
+          <div class="bar top"></div>
+          <div class="bar middle"></div>
+          <div class="bar bottom"></div>
+        </div>
+      </div>
+      <!-- nav-right -->
+    </nav>
+    
+<div class="container mt-3">
+  통합검색
+  <form action="/main/haveroom">
+    <input type="text" name="search">
+    <input type="submit" value="제출">
+  </form>
+
+</div>
+
+<div class="container">
+  <% @user.each do |x| %>
+    <a href="/chat/<%= x.id %>"><h3><%= x.id %> 한테 쪽지보내기 </h3></a>
+  <% end %>
+</div>
+
+</main>
+     <div class="sidebar">
+         <ul class="main-nav new-user">
+                  <li>
+                    <img src="/assets/로고.jpg" height=40px style="margin-top:10px; margin-left:10px;"></li>
+                <%if current_user.nil?%>
+                  <li><%= link_to '로그인', new_user_session_path %></li>
+                  <li><%= link_to '회원가입', new_user_registration_path %></li>
+                <%else%>
+                    <li> <a href="/mypage/index/<%= current_user.id%>">마이페이지</a></li>
+                  <li><%= link_to('Logout', destroy_user_session_path, method: :get) %> </li>
+                </ul>
+          	<div class="portfoliocard">
+          	<div class="profile_picture">
+          	  <img class="small_img" src="<%= current_user.image %>" alt="">
+              	  <div id="bottom-head"></div>
+              	  </div>
+              	  
+          	<div class="right_col">
+          		<h2 class="name" onclick="location.href='/mypage/index/<%= current_user.id%>'"><%= current_user.name %></h2>
+          		<ul class="contact_information">
+          			<li class="work">CEO</li>
+          			<li class="website"><a class="nostyle" href="#">www.apple.com</a></li>
+          			<li class="mail">john.doe@apple.com</li>
+          			<li class="phone">1-(732)-757-2923</li>
+          			<li class="resume"><a href="#" class="nostyle">download resume</a></li>
+          		</ul>
+          	</div>
+          	</div>
+          	<%end%>

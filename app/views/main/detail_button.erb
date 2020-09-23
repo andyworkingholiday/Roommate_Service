@@ -1,0 +1,52 @@
+<head>
+<link href="detail.scss" type="text/css">
+</head>    
+  <div class="m_detail">
+      <div class="detail"></div>
+      <div class="card detail">
+                     <% if @user.where(:id => @detail_id).take.image == nil %>
+                         <img class="card-img-top" src="/assets/basic image.jpg" alt="Card image cap">
+                     <% else %>
+                        <img class="card-img-top" src="<%= @user.where(:id => @detail_id).take.image %>" alt="Card image cap">
+                     <% end %>
+                    <div class="card-block ">
+                      <h3 class="card-title"><%= @user.where(:id => @detail_id).take.name %></h3>
+                      <p class="card-text"><%= @u_info.where(:user_id => @detail_id).take.school_name %></p>
+                    </div>
+                    
+      </div>
+      <div class="detail"></div>
+  </div>
+  
+  <div class="container">
+    <h3></h3><%= @u_info.where(:user_id => @detail_id).take.aa %></h3>
+    <h3></h3><%= @u_info.where(:user_id => @detail_id).take.ab %></h3>
+    <h3></h3><%= @u_info.where(:user_id => @detail_id).take.ac %></h3>
+    <h3></h3><%= @u_info.where(:user_id => @detail_id).take.ad %></h3>
+    
+   <form action='/main/propose' method="post">
+    <input type="hidden" name="other_id" value="<%= @detail_id %>">
+    <button  class="btn btn-primary">룸메 신청하기</button>
+  </form>
+  </div>
+  
+  <div class="container">
+      <h1> 질문 있어요!</h1>
+      <form action="/main/comment_create" method="post">
+          <input type="text" name="content">
+          <input type="submit" value="제출">
+      </form>
+  </div>
+  
+  <div class="container">
+      <% @comment.each do |x| %>
+          <%= x.content %>
+          <% if x.user_id == current_user.id %>
+              <button type="button"  onclick="location.href='/main/destroy/<%=x.id%>'">삭제에</button>
+              <br>
+          <% end %>
+      <% end %>
+       
+  </div>
+              
+

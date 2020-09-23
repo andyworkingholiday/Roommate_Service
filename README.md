@@ -12,9 +12,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-설명은 PPT를 참조하시기 바랍니다.
+백엔드는 어려워
 
 <!-- Environment -->
 ## Environment
-* html
-* css
+* HTML
+* CSS
+* JavaScript
+* Ruby
+* CoffeeScript

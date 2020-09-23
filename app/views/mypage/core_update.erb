@@ -1,0 +1,57 @@
+<head>
+  <link href="core_update.scss" type="text/css">
+  <script src="https://use.fontawesome.com/09bbfa620e.js"></script>
+</head>
+  <div class="container">
+    <div class="contentwrap">
+      <div class="ppage-header">
+	     <p class="hheader">기본 인적사항 수정</p>
+	      
+      </div>
+      <hr class="linee">
+        <form class="form-horizontal offset-3" action="/mypage/core_edit" method="post">
+                                    
+                                    <div class="form_group">
+                                        <label for="inlineFormCustomSelect" class="col-sm-2 control-label" style="text-align: left;">학교 고르기</label>
+                                        <div class="col-sm-8">
+                                        <select class="custom-select col-sm-10" id="inlineFormCustomSelect" name="school">
+                                          <option value="경희대학교(국제)">경희대학교(국제)</option>
+                                          <option value="경희대학교(서울)">경희대학교(서울)</option>
+                                          <option value="서울과기대">서울과기대</option>
+                                          
+                                        </select>
+                                        <br><br>
+                                        <p class="help-block">반드시 사용중인 이메일주소를 입력해주세요. 비밀번호 분실 시 이메일을 통해 재설정이 가능합니다.</p>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                  <div class="form_group">
+                                      <label for="inlineFormCustomSelect" class="col-sm-6 control-label" style="text-align: left;">성별</label>
+                                    <label class="custom-control custom-radio col-sm-3">
+                                      <input id="radioStacked1" name="gender" type="radio" class="custom-control-input" value="남자">
+                                      <span class="custom-control-indicator"></span>
+                                      <span class="custom-control-description">남자</span>
+                                    </label>
+                                    
+                                    <label class="custom-control custom-radio col-sm-3">
+                                      <input id="radioStacked2" name="gender" type="radio" class="custom-control-input" value="여자">
+                                      <span class="custom-control-indicator"></span>
+                                      <span class="custom-control-description">여자</span>
+                                    </label>
+                                  </div>
+                          
+                                  
+                                  <div class="form_group">
+                                    <label for="inlineFormCustomSelect" class="col-sm-3 control-label" style="text-align: left;">생년월일</label>
+                                      <input class="form-control col-sm-6" type="date" value="2011-08-19" id="example-date-input" name="age">
+                                  </div>
+                                  <div class="col-sm-12" style="margin-top: 10px;">
+                                  <button type="submit" class="btn btn-primary">제출</button>
+                                  </div>
+                                  
+                                  
+                   </form>
+    
+    </div>
+    </div>
